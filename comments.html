@@ -28,13 +28,21 @@
             --cusdis-primary-color-text: #FFFFFF; /* 버튼 글자 색상 (흰색) */
         }
         
-        /* 입력창과 버튼의 모서리를 살짝 둥글게 */
+        /* 🌙 다크 모드 전용 스타일 */
+        [data-theme="dark"] :host {
+            --cusdis-background: #2F2F2F; /* 다크 모드 배경색 (어두운 회색) */
+            --cusdis-border-color: #444444; /* 다크 모드 테두리 색상 */
+            --cusdis-text-color: #FFFFFF; /* 다크 모드 글자 색상 (흰색) */
+            --cusdis-secondary-text-color: #AAAAAA; /* 다크 모드 보조 글자 색상 */
+            --cusdis-link-color: #58A6FF;
+        }
+        
+        /* 공통 스타일 */
         #cusdis_thread [contenteditable],
         #cusdis_thread button {
             border-radius: 6px !important;
         }
         
-        /* 그림자 효과를 제거하여 더 평평하고 깔끔하게 */
         #cusdis_thread [contenteditable]:focus {
             box-shadow: none !important;
             border-color: var(--cusdis-link-color) !important;
