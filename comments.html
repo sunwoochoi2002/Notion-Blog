@@ -2,27 +2,36 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>My Notion Blog Comments</title>
+    <title>Cusdis Comments</title>
     <style>
         body { margin: 0; }
     </style>
 </head>
 <body>
-    <script src="https://giscus.app/client.js"
-            data-repo="sunwoochoi2002/Notion-Blog"
-            data-repo-id="R_kgDOPvHOeQ"
-            data-category="General"
-            data-category-id="DIC_kwDOPvHOec4CvZYO"
-            data-mapping="pathname"
-            data-origins="https://www.notion.so,https://garnet-index-79f.notion.site"
-            data-strict="0"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="top"
-            data-theme="preferred_color_scheme"
-            data-lang="ko"
-            crossorigin="anonymous"
-            async>
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="86c13ed4-8a87-40b4-b6c5-802f527b80ba"
+      data-page-id="" 
+      data-page-url=""
+      data-page-title=""
+    ></div>
+
+    <script>
+        // 현재 페이지의 URL에서 ?page= 뒤의 값을 가져옵니다.
+        const urlParams = new URLSearchParams(window.location.search);
+        const pageId = urlParams.get('page') || 'default-page'; // 페이지 ID가 없으면 기본값 사용
+
+        // cusdis_thread 요소를 찾습니다.
+        const cusdisThread = document.getElementById('cusdis_thread');
+
+        // data-* 속성들을 동적으로 설정합니다.
+        if (cusdisThread) {
+            cusdisThread.setAttribute('data-page-id', pageId);
+            cusdisThread.setAttribute('data-page-url', window.location.href);
+            // 페이지 제목은 URL에서 가져오기 어려우므로 간단히 pageId를 사용합니다.
+            cusdisThread.setAttribute('data-page-title', pageId);
+        }
     </script>
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </body>
 </html>
